@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<!-- {% for x in fruits %}
+  <h1>{{ x }}</h1>
+{% endfor %} -->
+
+<h1>
+  Hello {{ firstname }} , how are you?
+</h1>
+
+{% if greetings == 1 %}
+  <ul>
+    {% for x in mymembers %}
+      <li>
+        {{ x.firstname }} -- {{ x.joined_date}}
+      </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <table border="1">
+    <tr>
+      <th>Name</th>
+      <th>Joined Date</th>
+    </tr>
+    {% for x in mymembers %}
+      <tr>
+        <td>
+          {{ x.firstname }}
+        </td>
+        <td>
+          {{ x.joined_date}}
+        </td>
+      </tr>
+    {% endfor %}
+  </table>
+{% endif %}
+
+{% if day == 'friday' %}
+  <h2>
+    Day is friday
+  </h2>
+{% else %}
+  <h2>
+    Not Friday
+  </h2>
+{% endif %}
+
+<p>In views.py you can see what the fruits variable looks like.</p>
+
+</body>
+</html>
